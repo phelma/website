@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="post-title">Welcome</h1>
+  <p>I am a web developer based in London, and this is my website</p>
+  <p>Here you can find things I have made, posts I have written and more information about me.</p>
+  <p></p>
+  <h1 class="page-heading">Blog Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe"><a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe</a></p>
+
+</div>
